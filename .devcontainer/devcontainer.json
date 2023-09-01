@@ -1,0 +1,71 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+{
+	"name": "django_Examples",
+	// Reference to Dockerfile in same folder.
+	"build": {
+		"dockerfile": "../Dockerfile"
+	},
+	// Use 'mounts' to make the cargo cache persistent in a Docker Volume.
+	// "mounts": [
+	// 	{
+	// 		"source": "devcontainer-cargo-cache-${devcontainerId}",
+	// 		"target": "/usr/local/cargo",
+	// 		"type": "volume"
+	// 	}
+	// ]
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "sudo apt update && sudo apt install zsh -y && zsh ./.devcontainer/postCreateCommand.sh",
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			// vscode extensions to install
+			"extensions": [
+				// Personal Extensions
+				"ms-ceintl.vscode-language-pack-es",
+				"gruntfuggly.todo-tree",
+				"shardulm94.trailing-spaces",
+				"hbenl.vscode-test-explorer",
+				"ms-vscode.test-adapter-converter",
+				"dinhani.divider",
+				"esbenp.prettier-vscode",
+				"christian-kohler.path-intellisense",
+				"telesoho.vscode-markdown-paste-image",
+				"yzhang.markdown-all-in-one",
+				"sirtori.indenticator",
+				"kisstkondoros.vscode-gutter-preview",
+				"vincaslt.highlight-matching-tag",
+				"eamodio.gitlens",
+				"quentinguidee.gitignore-ultimate",
+				"bierner.github-markdown-preview",
+				"github.copilot",
+				"editorconfig.editorconfig",
+				"chekweitan.compare-view",
+				"streetsidesoftware.code-spell-checker",
+				"formulahendry.auto-complete-tag",
+				"ms-azuretools.vscode-docker",
+				//Español
+				//"streetsidesoftware.code-spell-checker-spanish",
+				// Specific Extensions for Python
+				"ms-python.python",
+				"donjayamanne.python-environment-manager",
+				"njpwerner.autodocstring",
+				"cschlosser.doxdocgen",
+				"ms-python.isort",
+				"kaih2o.python-resource-monitor",
+				"littlefoxteam.vscode-python-test-adapter",
+				"njqdev.vscode-python-typehint"
+			],
+			// vscode settings to override
+			"settings": {
+				// Configure the default terminal in vscode
+				"terminal.integrated.defaultProfile.linux": "zsh"
+			}
+		}
+	}
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
